@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "friendsbooks-6308b": {
+      "hosting": {
+        "argon-dashboard-angular": [
+          "friendsbooks-6308b"
+        ]
+      }
+    }
+  }
+}

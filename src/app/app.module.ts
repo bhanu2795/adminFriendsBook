@@ -13,6 +13,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
+// import { AngularFireModule } from '@angular/fire';
+// import { environment } from '../environments/environment';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+// import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   imports: [
@@ -22,7 +27,11 @@ import { ComponentsModule } from './components/components.module';
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // AngularFireModule.initializeApp(environment.firebaseConfig, 'FriendsBook'),
+    // AngularFirestoreModule, // Only required for database features
+    // AngularFireAuthModule, // Only required for auth features,
+    // AngularFireStorageModule // Only required for storage features
   ],
   declarations: [
     AppComponent,
