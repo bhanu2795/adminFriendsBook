@@ -13,25 +13,26 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
-// import { AngularFireModule } from '@angular/fire';
-// import { environment } from '../environments/environment';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
-// import { AngularFireStorageModule } from '@angular/fire/storage';
-// import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     ComponentsModule,
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig, 'FriendsBook'),
-    // AngularFirestoreModule, // Only required for database features
-    // AngularFireAuthModule, // Only required for auth features,
-    // AngularFireStorageModule // Only required for storage features
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'FriendsBook'),
+    AngularFirestoreModule, // Only required for database features
+    AngularFireAuthModule, // Only required for auth features,
+    AngularFireStorageModule // Only required for storage features
   ],
   declarations: [
     AppComponent,
