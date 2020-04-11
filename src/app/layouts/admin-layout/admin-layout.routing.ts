@@ -6,10 +6,12 @@ import { MapsComponent } from '../../pages/maps/maps.component';
 import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
 
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard',      component: DashboardComponent },
-    { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'tables',         component: TablesComponent },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent }
+    { path: 'dashboard', component: DashboardComponent, canActivate: [AngularFireAuthGuard] },
+    { path: 'user-profile', component: UserProfileComponent, canActivate: [AngularFireAuthGuard] },
+    { path: 'tables', component: TablesComponent, canActivate: [AngularFireAuthGuard] },
+    { path: 'icons', component: IconsComponent, canActivate: [AngularFireAuthGuard] },
+    { path: 'maps', component: MapsComponent, canActivate: [AngularFireAuthGuard] }
 ];
