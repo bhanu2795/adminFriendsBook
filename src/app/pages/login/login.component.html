@@ -37,21 +37,21 @@
           <div class="text-center text-muted mb-4">
             <small>Or sign in with credentials</small>
           </div>
-          <form role="form">
-            <div class="form-group mb-3">
+          <form role="form" [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group mb-3" [ngClass]="{'has-success': submitted && !(f.email.errors), 'has-danger': submitted && f.email.errors}">
               <div class="input-group input-group-alternative">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                 </div>
-                <input class="form-control" placeholder="Email" type="email">
+                <input class="form-control" [ngClass]="{'is-valid': submitted && f.email.errors, 'is-invalid': submitted && f.email.errors}" placeholder="Email" type="email" formControlName="email">
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" [ngClass]="{'has-success': !(!submitted && f.password.errors), 'has-danger': submitted && f.password.errors}">
               <div class="input-group input-group-alternative">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                 </div>
-                <input class="form-control" placeholder="Password" type="password">
+                <input class="form-control" [ngClass]="{'is-valid': !(!submitted && f.password.errors), 'is-invalid': submitted && f.password.errors}" placeholder="Password" type="password" formControlName="password">
               </div>
             </div>
             <div class="custom-control custom-control-alternative custom-checkbox">
@@ -61,17 +61,17 @@
               </label>
             </div>
             <div class="text-center">
-              <button type="button" class="btn btn-primary my-4">Sign in</button>
+              <button type="submit" class="btn btn-primary my-4">Sign in</button>
             </div>
           </form>
         </div>
       </div>
       <div class="row mt-3">
         <div class="col-6">
-          <a href="javascript:void(0)" class="text-light"><small>Forgot password?</small></a>
+          <a [routerLink]="['/forget']" class="text-light"><small>Forgot password?</small></a>
         </div>
         <div class="col-6 text-right">
-          <a href="javascript:void(0)" class="text-light"><small>Create new account</small></a>
+          <a [routerLink]="['/register']" class="text-light"><small>Create new account</small></a>
         </div>
       </div>
     </div>

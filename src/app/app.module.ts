@@ -23,7 +23,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   imports: [
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     ComponentsModule,
     NgbModule,
